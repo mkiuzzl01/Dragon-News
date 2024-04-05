@@ -1,10 +1,12 @@
-import { useEffect, useState } from "react";
+import { useContext, useEffect, useState } from "react";
 import { NavLink } from "react-router-dom";
 import NewsCard from "../NewsCard/NewsCard";
+import { newContext } from "../Home/Home";
 
 const LeftSideNav = () => {
+    const news = useContext(newContext);
     const [catagories,setCatagories] = useState([]);
-    const [news,setNews] = useState([]);
+    
 
     useEffect(()=>{
         fetch('categories.json')
@@ -12,11 +14,7 @@ const LeftSideNav = () => {
         .then(data=> setCatagories(data))
     },[])
 
-    useEffect(()=>{
-        fetch('news.json')
-        .then(res=> res.json())
-        .then(data=> setNews(data))
-    },[])
+    
     return (
         <div>
            <h1 className="text-2xl font-semibold mb-3">All Category</h1>
@@ -31,7 +29,7 @@ const LeftSideNav = () => {
             </div> 
             <div className="mt-4">
                 {
-                    news.splice(0,3).map(news=> <NewsCard key={news.id} news={news}></NewsCard>)
+                    news.splice(0,3).map((news,sideBar)=> <NewsCard key={news.id} sideBar={sideBar} news={news}></NewsCard>)
                 }
             </div>
         </div>
