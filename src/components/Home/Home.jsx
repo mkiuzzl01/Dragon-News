@@ -12,9 +12,8 @@ const Home = () => {
           <Navbar></Navbar>
         </nav>
       </header>
-      <h1 className="text-4xl">This is Home Page</h1>
       <main className="grid grid-cols-1 gap-6 md:grid-cols-4">
-        <section className="border-2">
+        <section className="">
           <LeftSideNav></LeftSideNav>
         </section>
         <section className="md:col-span-2 border-2">

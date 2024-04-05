@@ -12,7 +12,7 @@ const RightSideNav = () => {
   return (
     <div>
       <div className="space-y-2 mb-4">
-        <h1 className="text-2xl font-bold">Login With</h1>
+        <h1 className="text-2xl font-semibold">Login With</h1>
         <div>
           <p className="flex items-center space-x-3 border-2 rounded-lg p-2">
             <span>
@@ -32,7 +32,7 @@ const RightSideNav = () => {
       </div>
 
       <div className="mb-4">
-        <h1 className="text-2xl font-bold mb-4">Find Us On</h1>
+        <h1 className="text-2xl font-semibold mb-4">Find Us On</h1>
         <div className="border-2 rounded-lg">
           <div>
             <p className="flex items-center space-x-3 p-2">
@@ -61,7 +61,7 @@ const RightSideNav = () => {
       </div>
     {/* Q-Zone */}
       <div className="bg-gray-100 mb-4">
-        <h1 className="ext-2xl font-bold p-4">Q-Zone</h1>
+        <h1 className="ext-2xl font-semibold p-4">Q-Zone</h1>
         <div>
             <img src={img_1} alt="" />
         </div>
@@ -75,7 +75,7 @@ const RightSideNav = () => {
 
       {/* banner */}
       <div style={{ backgroundImage: `url(${banner})` }} className="text-white text-center p-8 space-y-4">
-        <p className="text-3xl font-bold">Create an <br /> Amazing <br /> Newspaper</p>
+        <p className="text-3xl font-semibold">Create an <br /> Amazing <br /> Newspaper</p>
         <p>Discover thousands of options, easy to customize layouts, one-click to import demo and much more.</p>
         <button className="btn btn-secondary rounded-none">Lear more</button>
       </div>
