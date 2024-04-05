@@ -20,7 +20,7 @@ const Home = () => {
         <section className="md:col-span-2 border-2">
           <h1>This is Middle section</h1>
         </section>
-        <section className="border-2">
+        <section className="">
           <RightSideNav></RightSideNav>
         </section>
       </main>
