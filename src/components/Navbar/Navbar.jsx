@@ -34,7 +34,7 @@ const Navbar = () => {
         </div>
       </div>
       </div>
-    <Link to='/Login'><button className="btn btn-error">LogIn</button></Link>
+    <Link to='/Login'><button className="btn bg-[#403F3F] border-0 text-white rounded-none">LogIn</button></Link>
   </div>
 </div>
   );

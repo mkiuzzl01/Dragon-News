@@ -8,7 +8,7 @@ const NewsCard = ({ news, home, sideBar }) => {
   return (
     <div>
       <div className={sideBar ? "visible" : "hidden"}>
-        <div className="card bg-base-100 shadow-xl mb-4">
+        <div className="card bg-base-100 shadow-lg p-2 mb-4">
           <figure>
             <img src={news.thumbnail_url} alt={title} />
           </figure>

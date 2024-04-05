@@ -16,7 +16,7 @@ const LeftSideNav = () => {
 
     
     return (
-        <div>
+        <div className="sticky top-0">
            <h1 className="text-2xl font-semibold mb-3">All Category</h1>
            <div className="space-y-4">
                 {

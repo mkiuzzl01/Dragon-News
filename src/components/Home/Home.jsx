@@ -8,13 +8,13 @@ import NewsCard from "../NewsCard/NewsCard";
 export const newContext = createContext([]);
 
 const Home = () => {
-    const [news,setNews] = useState([]);
+  const [news, setNews] = useState([]);
 
-    useEffect(()=>{
-        fetch('news.json')
-        .then(res=> res.json())
-        .then(data=> setNews(data))
-    },[])
+  useEffect(() => {
+    fetch("news.json")
+      .then((res) => res.json())
+      .then((data) => setNews(data));
+  }, []);
 
   return (
     <body>
@@ -26,17 +26,17 @@ const Home = () => {
       </header>
       <main className="grid grid-cols-1 gap-6 md:grid-cols-4">
         <newContext.Provider value={news}>
-        <section className="">
-          <LeftSideNav></LeftSideNav>
-        </section>
-        <section className="md:col-span-2">
-          {
-            news.map((news,home)=> <NewsCard key={news.id} home={home} news={news}></NewsCard>)
-          }
-        </section>
-        <section className="">
-          <RightSideNav></RightSideNav>
-        </section>
+          <section className="">
+            <LeftSideNav></LeftSideNav>
+          </section>
+          <section className="md:col-span-2">
+            {news.map((news, home) => (
+              <NewsCard key={news.id} home={home} news={news}></NewsCard>
+            ))}
+          </section>
+          <section className="">
+            <RightSideNav></RightSideNav>
+          </section>
         </newContext.Provider>
       </main>
     </body>

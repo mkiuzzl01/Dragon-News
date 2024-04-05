@@ -12,7 +12,7 @@ const Header = () => {
       </div>
 
       <div className="flex items-center">
-        <button className="btn btn-secondary">Latest</button>
+        <button className="btn bg-[#D72050] rounded-none border-0 text-white">Latest</button>
         <Marquee pauseOnHover speed={100} className="space-x-6">
           I can be a React component, multiple React components, or just some
           text. I can be a React component, multiple React components, or just
