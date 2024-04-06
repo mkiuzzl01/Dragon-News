@@ -2,9 +2,10 @@ import PropTypes from "prop-types";
 import { CiCalendar } from "react-icons/ci";
 import { FaStar } from "react-icons/fa";
 import { FaRegEye } from "react-icons/fa";
+import { Link } from "react-router-dom";
 
 const NewsCard = ({ news, home, sideBar }) => {
-  const { title, author } = news;
+  const { title, author, details,_id} = news;
   return (
     <div>
       <div className={sideBar ? "visible" : "hidden"}>
@@ -26,6 +27,7 @@ const NewsCard = ({ news, home, sideBar }) => {
           </div>
         </div>
       </div>
+
       <div className={home ? "visible" : "hidden"}>
         <div className="flex flex-col mb-4 p-6 space-y-6 overflow-hidden rounded-lg shadow-md text-black">
           <div>
@@ -84,11 +86,23 @@ const NewsCard = ({ news, home, sideBar }) => {
           <div>
           <h2 className="mb-1 text-xl font-semibold">{title}</h2>
             <img
-              src={news.thumbnail_url}
+              src={news.image_url}
               alt=""
               className="object-cover w-full mb-4 h-60 sm:h-96 bg-gray-500 dark:bg-gray-500"
             />
-            <p className="text-sm text-gray-400 dark:text-gray-600">{news.details}</p>
+            <p className="text-sm text-gray-400 dark:text-gray-600">
+              {
+                details.length>200?
+                <>
+                <p>{details.slice(0,200)}
+                <Link to={`/News/${_id}`} className='text-blue-500 font-semibold'> Read More...</Link>
+                </p>
+                </>:
+                <>
+                <p>{details}</p>
+                </>
+              }
+              </p>
             <div className="flex justify-between border-t-2 mt-2">
                 <p className="flex items-center space-x-2"><span className="flex text-yellow-500"><FaStar /> <FaStar /> <FaStar /></span> <span>{news.rating.number}</span></p>
                 <p className="flex items-center space-x-2"><FaRegEye /><span>{news.total_view}</span></p>

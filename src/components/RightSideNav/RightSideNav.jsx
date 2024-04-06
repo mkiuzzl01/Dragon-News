@@ -10,7 +10,7 @@ import img_3 from '../../assets/images/qZone3.png'
 import banner from '../../assets/images/bg.png'
 const RightSideNav = () => {
   return (
-    <div className="sticky top-0">
+    <div className="">
       <div className="space-y-2 mb-4">
         <h1 className="text-2xl font-semibold">Login With</h1>
         <div>

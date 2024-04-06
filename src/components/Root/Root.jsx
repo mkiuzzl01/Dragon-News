@@ -5,8 +5,7 @@ import Header from "../Header/Header";
 const Root = () => {
   return (
     <div className="max-w-6xl m-auto font-Poppins">
-       
-      <Outlet></Outlet>
+       <Outlet></Outlet>
     </div>
   );
 };

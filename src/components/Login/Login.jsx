@@ -1,12 +1,26 @@
-import { Link } from "react-router-dom";
+import { Link, useLocation, useNavigate } from "react-router-dom";
 import Navbar from "../Navbar/Navbar";
+import { useContext } from "react";
+import { AuthContext } from "../Provider/AuthContextProvider";
 
 const Login = () => {
-  const handleLogIn = (e) => {
+    const {logInUser} = useContext(AuthContext);
+    const location = useLocation();
+    const navigate = useNavigate();
+
+    const handleLogIn = (e) => {
     e.preventDefault();
-    const email = e.target.email.value;
-    const pass = e.target.password.value;
-    console.log(email, pass);
+    const form = new FormData(e.currentTarget);
+    const email = form.get('email');
+    const pass = form.get('password');
+
+    logInUser(email,pass)
+    .then(()=>{
+        navigate(location?.state? location.state: '/');
+    })
+    .catch(error =>{
+        console.error(error);
+    })
   };
   return (
     <div>
@@ -48,7 +62,7 @@ const Login = () => {
             </div>
           </div>
           <button className="block w-full p-3 text-center rounded-sm text-gray-900 dark:text-gray-50 bg-[#403F3F]">
-            Sign in
+            LogIn
           </button>
         </form>
         <div className="flex items-center pt-4 space-x-1">
